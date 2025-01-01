@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const path  = require('path');
 
 const app = express();
-const PORT = 5000;
-const MONGO_URI='mongodb+srv://sandipsannake:0LId7t6wekGvpha0@cluster0.hio6r.mongodb.net/Table-slot-Booking-DB'
+const PORT = process.env.PORT;
+const MONGO_URI=process.env.MONGO_URI;
 
 
 // Middleware
