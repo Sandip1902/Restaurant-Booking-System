@@ -17,7 +17,7 @@ function BookingForm() {
         const fetchAvailableSlots = async () => {
             if (formData.date) {
                 try {
-                    const response = await axios.get(`http://localhost:5000/get-available-slots?date=${formData.date}`);
+                    const response = await axios.get(`https://restaurant-booking-system-8acb.onrender.com/get-available-slots?date=${formData.date}`);
                     setAvailableSlots(response.data.availableSlots);
                 } catch (error) {
                     console.error('Error fetching available slots:', error);
@@ -36,7 +36,7 @@ function BookingForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/create-booking', formData);
+            const response = await axios.post('https://restaurant-booking-system-8acb.onrender.com/create-booking', formData);
             alert(response.data.message);
             // Redirect to confirmation page with booking details
             navigate('/confirmation', { state: { bookingDetails: formData } });

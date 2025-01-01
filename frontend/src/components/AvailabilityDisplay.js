@@ -8,7 +8,7 @@ function AvailabilityDisplay({ date }) {
     useEffect(() => {
         const fetchAvailableSlots = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/get-available-slots?date=${date}`);
+                const response = await axios.get(`https://restaurant-booking-system-8acb.onrender.com/get-available-slots?date=${date}`);
                 setAvailableSlots(response.data.availableSlots);
             } catch (error) {
                 setError('Error fetching available slots.');
